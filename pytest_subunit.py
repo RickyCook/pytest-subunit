@@ -125,8 +125,7 @@ class SubunitTerminalReporter(TerminalReporter):
         except:
             pass
         writer.stringio.seek(0)
-        out = writer.stringio.read()
-        out = str(out)
+        out = writer.stringio.read().encode()
 
         # send status
         self.result.status(test_id=test_id,
